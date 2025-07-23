@@ -1,0 +1,81 @@
+:root{
+    --backgroundColor: #f0f0f0;
+    --backgroundColor2: #ffffff;
+    --textcolor: #202020;
+}
+
+:root.dark{
+    --backgroundColor: #303030;
+    --backgroundColor2: #202020;
+    --textcolor: #fafafa;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    /* color: var(--textcolor); */
+    /* background-color: var(--backgroundColor2); */
+}
+
+body.light, body.light * {
+    background-color: #f0f0f0;
+    color: #202020;
+    transition: .5s;
+}
+
+body.dark, body.dark *{
+    background-color: #202020;
+    color: #fafafa;
+    transition: .5s;
+}
+
+.switch{
+    appearance: none;
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    border: .5px solid gray;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 5px #00000088;
+    transition: .5s;
+    position: relative;
+}
+
+.switch:checked{
+    transition: .5s;
+}
+
+.switch::before{
+    content: '';
+    width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #ffff008e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+
+.switch:checked::before{
+    content: '';
+    width: 50%;
+    border-radius: 50%;
+    background-color: #ffff008e;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transition: .5s;
+}
