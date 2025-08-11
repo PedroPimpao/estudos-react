@@ -1,5 +1,5 @@
-import '.././index.css'
-export default function Switch({id, onClick, checked}){
+// import '.././index.css'
+export default function Switch({id, onChange, checked}){
     return (
         <>
             <input 
@@ -7,7 +7,7 @@ export default function Switch({id, onClick, checked}){
                 name={id} 
                 id={id} 
                 className="switch" 
-                onClick={onClick} 
+                onClick={onChange} 
                 checked={checked}
             />
         </>

@@ -13,7 +13,8 @@ function ThemeProvider({ children }) {
 
     const toggleTheme = () => {
         setTheme((prevTheme) =>{
-            // const prevTheme = localStorage.getItem('theme')
+            const tasks = localStorage.getItem('tasks')
+            console.log(tasks)
             const newTheme = prevTheme === 'light'? 'dark' : 'light'
             body.className = newTheme
             return newTheme

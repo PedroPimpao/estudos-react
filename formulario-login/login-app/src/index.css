@@ -1,21 +1,28 @@
-:root{
-    --backgroundColor: #f0f0f0;
-    --backgroundColor2: #ffffff;
-    --textcolor: #202020;
+body{
+    --backgroundColor: #c2c2c2;
+    --color: #202020;
+    --buttonColor1: #028eeb;
+    --buttonColor1effect: #0270b9;
+    --borderColor: #202020;
 }
 
-:root.dark{
-    --backgroundColor: #303030;
-    --backgroundColor2: #202020;
-    --textcolor: #fafafa;
+body.dark{
+    --backgroundColor: #202020;
+    --color: #f0f0f0;
+    --borderColor: #c0c0c0;
 }
 
+body{
+    background-color: var(--backgroundColor);
+    color: var(--color);
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    transition: .5s;
 }
 
 body{
@@ -25,20 +32,70 @@ body{
     justify-content: center;
     align-items: center;
     transition: .5s;
-    /* color: var(--textcolor); */
-    /* background-color: var(--backgroundColor2); */
 }
 
-body.light, body.light * {
-    background-color: #f0f0f0;
-    color: #202020;
-    transition: .5s;
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    border: 1.5px solid var(--borderColor);
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.329);
+}
+.input{
+    border: 0;
 }
 
-body.dark, body.dark *{
-    background-color: #202020;
-    color: #fafafa;
-    transition: .5s;
+.input-wrapper{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.39);
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid var(--borderColor);
+}
+
+.input-wrapper, .input{
+    outline: none;
+    background-color: transparent;
+    color: var(--color);
+    font-size: 1em;
+    width: 100%;
+}
+
+.eye-icon{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.inputBox label{
+    margin-left: 5px;
+}
+
+
+.done-button{
+    padding: 10px;
+    font-size: 1em;
+    background-color: var(--buttonColor1);
+    border: 1px solid #c0c0c0;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #e3e3e3;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.done-button:active{
+    background-color: var(--buttonColor1effect);
 }
 
 .switch{
@@ -51,6 +108,7 @@ body.dark, body.dark *{
     box-shadow: inset 0px 0px 5px #00000088;
     transition: .5s;
     position: relative;
+    cursor: pointer;
 }
 
 .switch:checked{
@@ -62,10 +120,11 @@ body.dark, body.dark *{
     width: 50%;
     height: 100%;
     border-radius: 50%;
-    background-color: #ffff008e;
+    background-color: var(--buttonColor1);
     position: absolute;
     top: 0;
     left: 0;
+    transform: scale(0.9);
     transition: .5s;
 }
 
@@ -73,7 +132,7 @@ body.dark, body.dark *{
     content: '';
     width: 50%;
     border-radius: 50%;
-    background-color: #ffff008e;
+    background-color: var(--buttonColor1);
     position: absolute;
     top: 0;
     left: 50%;
