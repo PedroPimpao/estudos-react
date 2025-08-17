@@ -1,3 +1,4 @@
+// import './index.css'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { UserProvider } from './contexts/UserContext'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'

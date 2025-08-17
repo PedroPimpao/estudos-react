@@ -1,5 +1,6 @@
 body{
     --backgroundColor: #c2c2c2;
+    --secondaryButtonColor: #2020208a;
     --color: #202020;
     --buttonColor1: #028eeb;
     --buttonColor1effect: #0270b9;
@@ -8,6 +9,7 @@ body{
 
 body.dark{
     --backgroundColor: #202020;
+    --secondaryButtonColor: #c2c2c28a;
     --color: #f0f0f0;
     --borderColor: #c0c0c0;
 }
@@ -38,11 +40,14 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    padding: 30px;
     
     border: 1.5px solid var(--borderColor);
     border-radius: 10px;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.329);
 }
+
 .input{
     border: 0;
 }
@@ -82,20 +87,39 @@ body{
 }
 
 
-.done-button{
-    padding: 10px;
+.button{
+    padding: 8px;
     font-size: 1em;
     background-color: var(--buttonColor1);
-    border: 1px solid #c0c0c0;
-    border-radius: 8px;
+    border: 1px solid var(--borderColor);
+    border-radius: 4px;
     font-weight: bold;
     color: #e3e3e3;
     cursor: pointer;
     transition: .1s;
 }
 
-.done-button:active{
+.button:active{
     background-color: var(--buttonColor1effect);
+}
+
+.full-width{
+    width: 100%;
+}
+
+.transparent{
+    background-color: transparent;
+    color: var(--color);
+}
+
+.transparent:active{
+    background-color: var(--secondaryButtonColor);
+    color: var(--backgroundColor);
+}
+
+.full-width-transparent{
+    width: 100%;
+    background-color: transparent;
 }
 
 .switch{
@@ -109,6 +133,7 @@ body{
     transition: .5s;
     position: relative;
     cursor: pointer;
+
 }
 
 .switch:checked{
@@ -124,7 +149,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    transform: scale(0.9);
+    transform: scale(0.8);
     transition: .5s;
 }
 

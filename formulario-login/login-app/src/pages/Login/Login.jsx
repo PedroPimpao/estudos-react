@@ -15,37 +15,17 @@ import { Eye, EyeOff } from "lucide-react"
 export function Login(){
     const { toggleTheme, theme } = useContext(ThemeContext)
     const [isVisible, setVisibility] = useState(false)
-    const { userData, setUserData } = useContext(UserContext)
+    // const { userData, setUserData } = useContext(UserContext)
     const navigate = useNavigate()
-
-    const handleNameChange = (event) =>{
-        const newName = event.target.value
-        setUserData((previousData)=>{
-            const updated = { ...previousData, name: newName}
-            return updated
-        })
-    }
-
-    const handleEmailChange = (event) =>{
-        const newEmail = event.target.value
-        setUserData((previousData)=>{
-            const updated = { ...previousData, email: newEmail}
-            return updated
-        })
-    }
-
-    const handlePasswordChange = (event) =>{
-        const newPassword = event.target.value
-        setUserData((previousData)=>{
-            const updated = { ...previousData, password: newPassword}
-            return updated
-        })
-    }
 
     const sign=(evt)=>{
         evt.preventDefault()
         console.log('Login realizado com sucesso!')
         navigate('/signedusers')
+    }
+
+    const toSignUp=()=>{
+        navigate('/signup')
     }
 
     const toggleVisibility=()=>{
@@ -61,20 +41,11 @@ export function Login(){
 
                     <InputBox 
                     type="text" 
-                    placeholder="Usuário"
+                    placeholder="Usuário ou Email"
                     id={"usernameInput"}
-                    label={"Usuário"}
-                    value={userData.name}
-                    onChange={handleNameChange}
-                    />
-
-                    <InputBox 
-                    type="text" 
-                    placeholder="Email"
-                    id={"emailInput"}
-                    label={"Email"} 
-                    value={userData.email}
-                    onChange={handleEmailChange}
+                    label={"Usuário / Email"}
+                    // value={userData.name}
+                    // onChange={handleNameChange}
                     />
 
                     <InputBox 
@@ -84,14 +55,22 @@ export function Login(){
                     label={"Senha"} 
                     eye={isVisible? <EyeOff/> : <Eye/>}
                     onClickEye={toggleVisibility}
-                    value={userData.password}
-                    onChange={handlePasswordChange}
+                    // value={userData.password}
+                    // onChange={handlePasswordChange}
                     />
 
                     <Button 
-                    type="submit"
-                    onClick={sign}
-                    label="Entrar"
+                        type="submit"
+                        onClick={sign}
+                        label="Entrar"
+                        className={"button"}
+                    />
+
+                    <Button 
+                        type="button"
+                        onClick={toSignUp}
+                        label="Cadastrar-se"
+                        className={"button transparent"}
                     />
 
                 </div>

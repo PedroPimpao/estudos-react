@@ -1,0 +1,10 @@
+.signup-container{
+    width: 400px;
+    height: 500px;
+}
+
+.signup-container .form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
