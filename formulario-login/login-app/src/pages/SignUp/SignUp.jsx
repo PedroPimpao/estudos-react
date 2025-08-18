@@ -10,7 +10,7 @@ import "./SignUp.css"
 
 export function SignUp(){
     const [isVisible, setVisibility] = useState(false)
-    const { userData, setUserData } = useContext(UserContext)
+    const { userData, setUserData, addUser } = useContext(UserContext)
     const navigate = useNavigate()
 
     const handleNameChange = (event) =>{
@@ -39,12 +39,17 @@ export function SignUp(){
 
     const sign=(evt)=>{
         evt.preventDefault()
-        console.log('Login realizado com sucesso!')
+        // console.log('Login realizado com sucesso!')
+        addUser(userData)
         navigate('/signedusers')
     }
 
     const toggleVisibility=()=>{
         setVisibility(prev => !prev)
+    }
+
+    const navigateToLogin=()=>{
+        navigate('/')
     }
     
     return (
@@ -84,8 +89,15 @@ export function SignUp(){
                     <Button 
                     type="submit"
                     onClick={sign}
-                    label="Entrar"
+                    label="Cadastrar-se"
                     className={"button"}
+                    />
+
+                    <Button 
+                    type="submit"
+                    onClick={navigateToLogin}
+                    label="Já tenho conta!"
+                    className={"button transparent"}
                     />
 
                 </div>
