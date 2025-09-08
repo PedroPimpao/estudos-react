@@ -1,0 +1,143 @@
+body{
+    --backgroundColor: #bbbaba;
+    --backgroundContainer: #c5c5c5;
+    --secondaryButtonColor: #2020208a;
+    --color: #202020;
+    --buttonColor1: #028eeb;
+    --buttonColor1effect: #0270b9;
+    --borderColor: #303030;
+}
+
+body.dark{
+    --backgroundColor: #202020;
+    --backgroundContainer: #303030;
+    --secondaryButtonColor: #c2c2c28a;
+    --color: #f0f0f0;
+    --borderColor: #c0c0c0;
+}
+
+body{
+    background-color: var(--backgroundColor);
+    color: var(--color);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    transition: .5s;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.calculator-container{
+    background-color: var(--backgroundContainer);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    border: 2px solid var(--borderColor);
+    width: 400px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-field{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--borderColor);
+    color: var(--color);
+    background-color: transparent;
+    outline: none;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.button{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--buttonColor1);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+    width: 100%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.switch-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.switch{
+    appearance: none;
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    border: .5px solid gray;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 5px #00000088;
+    transition: .5s;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.switch:checked{
+    transition: .5s;
+}
+
+.switch::before{
+    content: '';
+    width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--buttonColor1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0.8);
+    transition: .5s;
+}
+
+.switch:checked::before{
+    content: '';
+    width: 50%;
+    border-radius: 50%;
+    background-color: var(--buttonColor1);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transition: .5s;
+}
